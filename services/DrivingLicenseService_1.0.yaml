@@ -81,37 +81,61 @@ paths:
                 $ref: '#/components/schemas/Driver'
               examples:
                 satya:
-                  value: "[\n{{\"DriverId\": 1, \"FirstName\": \"Satya\", \"LastName\"\
-                    : \"Jayanti\", \"License\": \"GPTE101\", \"Valid\": true}    \n\
-                    ]"
+                  value:
+                    DriverId: 1
+                    FirstName: Satya
+                    LastName: Jayanti
+                    License: GPTE101
+                    Valid: true
                 Hong:
-                  value: |-
-                    [
-                    {"DriverId": 6, "FirstName": "Hong Hua", "LastName": "Chin", "License": "GPTE106", "Valid": false}
-                    ]
+                  value:
+                    DriverId: 6
+                    FirstName: Hong Hua
+                    LastName: Chin
+                    License: GPTE106
+                    Valid: false
                 bernard:
-                  value: |-
-                    [
-                    {"DriverId": 5, "FirstName": "Bernard", "LastName": "Tison", "License": "GPTE105", "Valid": true}
-                    ]
+                  value:
+                    DriverId: 5
+                    FirstName: Bernard
+                    LastName: Tison
+                    License: GPTE105
+                    Valid: true
                 Jatinder:
-                  value: "[\n{\"DriverId\": 8, \"FirstName\": \"Jatinder\", \"LastName\"\
-                    : \"Singh\", \"License\": \"GPTE108\", \"Valid\": true}    \n]"
+                  value:
+                    DriverId: 8
+                    FirstName: Jatinder
+                    LastName: Singh
+                    License: GPTE108
+                    Valid: true
                 Jeff:
-                  value: "[\n{\"DriverId\": 2, \"FirstName\": \"Jeff\", \"LastName\"\
-                    : \"Bride\", \"License\": \"GPTE102\", \"Valid\": true}    \n]"
+                  value:
+                    DriverId: 2
+                    FirstName: Jeff
+                    LastName: Bride
+                    License: GPTE102
+                    Valid: true
                 Jeffrey:
-                  value: |-
-                    [
-                    {"DriverId": 3, "FirstName": "Jeffrey", "LastName": "Delong", "License": "GPTE103", "Valid": true}
-                    ]
+                  value:
+                    DriverId: 3
+                    FirstName: Jeffrey
+                    LastName: Delong
+                    License: GPTE103
+                    Valid: true
                 nandan:
-                  value: "[\n{\"DriverId\": 4, \"FirstName\": \"Nandan\", \"LastName\"\
-                    : \"Joshi\", \"License\": \"GPTE104\", \"Valid\": false}    \n\
-                    ]"
+                  value:
+                    DriverId: 4
+                    FirstName: Nandan
+                    LastName: Joshi
+                    License: GPTE104
+                    Valid: false
                 Chad:
-                  value: "[\n{\"DriverId\": 7, \"FirstName\": \"Chad\", \"LastName\"\
-                    : \"Darby\", \"License\": \"GPTE107\", \"Valid\": true}    \n]"
+                  value:
+                    DriverId: 7
+                    FirstName: Chad
+                    LastName: Darby
+                    License: GPTE107
+                    Valid: true
     delete:
       description: Delete a user details based on ID.
       parameters:
