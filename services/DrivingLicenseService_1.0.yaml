@@ -80,61 +80,61 @@ paths:
               schema:
                 $ref: '#/components/schemas/Driver'
               examples:
-                satya:
+                1:
                   value:
                     DriverId: 1
                     FirstName: Satya
                     LastName: Jayanti
                     License: GPTE101
                     Valid: true
-                Hong:
-                  value:
-                    DriverId: 6
-                    FirstName: Hong Hua
-                    LastName: Chin
-                    License: GPTE106
-                    Valid: false
-                bernard:
-                  value:
-                    DriverId: 5
-                    FirstName: Bernard
-                    LastName: Tison
-                    License: GPTE105
-                    Valid: true
-                Jatinder:
-                  value:
-                    DriverId: 8
-                    FirstName: Jatinder
-                    LastName: Singh
-                    License: GPTE108
-                    Valid: true
-                Jeff:
+                2:
                   value:
                     DriverId: 2
                     FirstName: Jeff
                     LastName: Bride
                     License: GPTE102
                     Valid: true
-                Jeffrey:
+                3:
                   value:
                     DriverId: 3
                     FirstName: Jeffrey
                     LastName: Delong
                     License: GPTE103
                     Valid: true
-                nandan:
+                4:
                   value:
                     DriverId: 4
                     FirstName: Nandan
                     LastName: Joshi
                     License: GPTE104
                     Valid: false
-                Chad:
+                5:
+                  value:
+                    DriverId: 5
+                    FirstName: Bernard
+                    LastName: Tison
+                    License: GPTE105
+                    Valid: true
+                6:
+                  value:
+                    DriverId: 6
+                    FirstName: Hong Hua
+                    LastName: Chin
+                    License: GPTE106
+                    Valid: false
+                7:
                   value:
                     DriverId: 7
                     FirstName: Chad
                     LastName: Darby
                     License: GPTE107
+                    Valid: true
+                8:
+                  value:
+                    DriverId: 8
+                    FirstName: Jatinder
+                    LastName: Singh
+                    License: GPTE108
                     Valid: true
     delete:
       description: Delete a user details based on ID.
