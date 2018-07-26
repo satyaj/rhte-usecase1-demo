@@ -49,21 +49,6 @@ paths:
                         {"DriverId": 7, "FirstName": "Chad", "LastName": "Darby", "License": "GPTE107", "Valid": true}
                         {"DriverId": 8, "FirstName": "Jatinder", "LastName": "Singh", "License": "GPTE108", "Valid": true}
                     ]
-  /drivers/driver/{id}/valid:
-    get:
-      description: Get the Driver's License details
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: number
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                type: boolean
   /drivers/driver/{driverId}/:
     get:
       description: Get a Driver based on ID.
@@ -146,6 +131,46 @@ paths:
           type: number
       responses:
         204: {}
+  /drivers/driver/{driverId}/valid/:
+    get:
+      description: Get the Driver's License details
+      parameters:
+      - name: driverId
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: boolean
+              examples:
+                1:
+                  value:
+                    Valid: true
+                2:
+                  value:
+                    Valid: true
+                3:
+                  value:
+                    Valid: true
+                4:
+                  value:
+                    Valid: false
+                5:
+                  value:
+                    Valid: true
+                6:
+                  value:
+                    Valid: false
+                7:
+                  value:
+                    Valid: true
+                8:
+                  value:
+                    Valid: true
 components:
   schemas:
     Driver:
