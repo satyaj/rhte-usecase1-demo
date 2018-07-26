@@ -64,11 +64,11 @@ paths:
             application/json:
               schema:
                 type: boolean
-  /drivers/driver/{id}:
+  /drivers/driver/{driverId}/:
     get:
       description: Get a Driver based on ID.
       parameters:
-      - name: id
+      - name: driverId
         in: path
         required: true
         schema:
