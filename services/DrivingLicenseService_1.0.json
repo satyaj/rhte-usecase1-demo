@@ -1,0 +1,227 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "DriverLicenseService",
+    "description" : "Provide Driver License details",
+    "version" : "1.0.0"
+  },
+  "paths" : {
+    "/drivers/driver" : {
+      "put" : {
+        "description" : "Update Driver Information based on Driver Id",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Driver"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : { }
+        }
+      },
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Driver"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : { }
+        }
+      }
+    },
+    "/drivers" : {
+      "get" : {
+        "description" : "Get a list of all drivers.",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Driver"
+                  }
+                },
+                "examples" : {
+                  "GPTE_List" : {
+                    "value" : "[\n    {\"DriverId\": 1, \"FirstName\": \"Satya\", \"LastName\": \"Jayanti\", \"License\": \"GPTE101\", \"Valid\": true},\n    {\"DriverId\": 2, \"FirstName\": \"Jeff\", \"LastName\": \"Bride\", \"License\": \"GPTE102\", \"Valid\": true}\n    {\"DriverId\": 3, \"FirstName\": \"Jeffrey\", \"LastName\": \"Delong\", \"License\": \"GPTE103\", \"Valid\": true}\n    {\"DriverId\": 4, \"FirstName\": \"Nandan\", \"LastName\": \"Joshi\", \"License\": \"GPTE104\", \"Valid\": false}\n    {\"DriverId\": 5, \"FirstName\": \"Bernard\", \"LastName\": \"Tison\", \"License\": \"GPTE105\", \"Valid\": true}\n    {\"DriverId\": 6, \"FirstName\": \"Hong Hua\", \"LastName\": \"Chin\", \"License\": \"GPTE106\", \"Valid\": false}\n    {\"DriverId\": 7, \"FirstName\": \"Chad\", \"LastName\": \"Darby\", \"License\": \"GPTE107\", \"Valid\": true}\n    {\"DriverId\": 8, \"FirstName\": \"Jatinder\", \"LastName\": \"Singh\", \"License\": \"GPTE108\", \"Valid\": true}\n]"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/drivers/driver/{id}/valid" : {
+      "get" : {
+        "description" : "Get the Driver's License details",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/drivers/driver/{driverId}/" : {
+      "get" : {
+        "description" : "Get a Driver based on ID.",
+        "parameters" : [ {
+          "name" : "driverId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Driver"
+                },
+                "examples" : {
+                  "1" : {
+                    "value" : {
+                      "DriverId" : 1,
+                      "FirstName" : "Satya",
+                      "LastName" : "Jayanti",
+                      "License" : "GPTE101",
+                      "Valid" : true
+                    }
+                  },
+                  "2" : {
+                    "value" : {
+                      "DriverId" : 2,
+                      "FirstName" : "Jeff",
+                      "LastName" : "Bride",
+                      "License" : "GPTE102",
+                      "Valid" : true
+                    }
+                  },
+                  "3" : {
+                    "value" : {
+                      "DriverId" : 3,
+                      "FirstName" : "Jeffrey",
+                      "LastName" : "Delong",
+                      "License" : "GPTE103",
+                      "Valid" : true
+                    }
+                  },
+                  "4" : {
+                    "value" : {
+                      "DriverId" : 4,
+                      "FirstName" : "Nandan",
+                      "LastName" : "Joshi",
+                      "License" : "GPTE104",
+                      "Valid" : false
+                    }
+                  },
+                  "5" : {
+                    "value" : {
+                      "DriverId" : 5,
+                      "FirstName" : "Bernard",
+                      "LastName" : "Tison",
+                      "License" : "GPTE105",
+                      "Valid" : true
+                    }
+                  },
+                  "6" : {
+                    "value" : {
+                      "DriverId" : 6,
+                      "FirstName" : "Hong Hua",
+                      "LastName" : "Chin",
+                      "License" : "GPTE106",
+                      "Valid" : false
+                    }
+                  },
+                  "7" : {
+                    "value" : {
+                      "DriverId" : 7,
+                      "FirstName" : "Chad",
+                      "LastName" : "Darby",
+                      "License" : "GPTE107",
+                      "Valid" : true
+                    }
+                  },
+                  "8" : {
+                    "value" : {
+                      "DriverId" : 8,
+                      "FirstName" : "Jatinder",
+                      "LastName" : "Singh",
+                      "License" : "GPTE108",
+                      "Valid" : true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Delete a user details based on ID.",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "204" : { }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Driver" : {
+        "required" : [ "DriverId", "LastName", "FirstName", "License", "Valid" ],
+        "properties" : {
+          "DriverId" : {
+            "type" : "number"
+          },
+          "LastName" : {
+            "type" : "string"
+          },
+          "FirstName" : {
+            "type" : "string"
+          },
+          "License" : {
+            "type" : "string"
+          },
+          "Valid" : {
+            "type" : "boolean"
+          }
+        }
+      }
+    }
+  }
+}
