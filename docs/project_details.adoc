@@ -80,6 +80,8 @@ image::images/Deployment_Diagram.png[]
 
 . One instance per student
 . deployed and ready for use
++
+NOTE: Cluster Quota for secrets & service accounts needs to be configured based on number of projects running in the cluster. Rough estimate is 9 x No. of Projects + any custom secrets
 
 ==== Decision Manager API Service
 
@@ -139,9 +141,12 @@ Provide NodeJS client application that sends a message to Camel running on Fuse 
 . RH SSO
 
 . Tested with Apicurio, Microcks & 3scale
-. TBD: Using single instance with all products
-. TBD: Use multiple realms
-. Using OAuthTokens
+. Tested Using single instance with all products
+. Tested using multiple realms (apicurio, microcks & 3scale)
+. Using OAuthTokens for Openshift Identity Provider and SSO integration.
+. Tested RH SSO integration with Dev Portal running on SaaS.
+
+
 
 
 
@@ -151,5 +156,6 @@ Provide NodeJS client application that sends a message to Camel running on Fuse 
 . https://developers.redhat.com/blog/2018/04/11/api-journey-idea-deployment-agile-part1/
 . https://apicurio-studio.readme.io/docs/getting-started
 . http://microcks.github.io/
+. https://access.redhat.com/documentation/en-us/red_hat_3scale/2.2/html/developer_portal/authentication#enabling_and_disabling_authentication_via_red_hat_single_sign_on
 
 
