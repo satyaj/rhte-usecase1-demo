@@ -140,11 +140,11 @@ Provide NodeJS client application that sends a message to Camel running on Fuse 
 
 . RH SSO
 
-. Tested with Apicurio, Microcks & 3scale
-. Tested Using single instance with all products
-. Tested using multiple realms (apicurio, microcks & 3scale)
-. Using OAuthTokens for Openshift Identity Provider and SSO integration.
-. Tested RH SSO integration with Dev Portal running on SaaS.
+.. Tested with Apicurio, Microcks & 3scale
+.. Tested Using single instance with all products
+.. Tested using multiple realms (apicurio, microcks & 3scale)
+.. Using OAuthTokens for Openshift Identity Provider and SSO integration.
+.. Tested RH SSO integration with Dev Portal running on SaaS.
 
 
 
