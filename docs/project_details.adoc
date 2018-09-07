@@ -11,9 +11,10 @@ This lab showcases the API Lifecycle. The usecase is as follows:
 . Design a REST API and create sample request and response data.
 . Use mockups of the APIs to facilitate integration.
 . Provide API Management of the APIs.
+. Create a camel route to orchestrate the APIs.
+. Provide API Management of the orchestrated API.
+. Provide single-sign-on for access to the API.
 . Use a client application to acccess the APIs.
-. Use a camel route to orchestrate the APIs.
-. Provide single-sign-on for access to the APIs.
 
 
 === Products & Technologies
@@ -21,7 +22,7 @@ This lab showcases the API Lifecycle. The usecase is as follows:
 . Apicurio Design Studio
 . Microcks Mock Services
 . Red Hat 3scale API Management Platform
-. Red Hat Fuse Online
+. Red Hat Fuse Online (Fuse Ignite/Syndesis)
 . Red Hat Single Sign On Server
 . Red Hat Decision Manager
 . Red Hat OpenShift Container Platform
@@ -246,7 +247,6 @@ oc new-app --template=sso71-mysql-persistent --param=SSO_ADMIN_USERNAME=$SSO_ADM
 [source,text]
 -----
 
-# To run in a loop, once for each student
 
 SSO_ADMIN_USERNAME=admin
 SSO_ADMIN_PASSWORD=password
@@ -413,16 +413,17 @@ oc new-app  --name=quoting --template rhdm70-kieserver-basic-s2i  --param=APPLIC
 
 === Problem Statement
 
-Agile Integration scenario where a Fuse Ignite route is used to provide orchestration of 2 backend services, and expose a composite REST API on 3scale. 
+Agile Integration scenario where a Fuse Ignite route is used to provide orchestration of 2 backend services, and expose a composite REST API on 3scale. This API is then secured with OAuth2 & OIDC using Red Hat Single Sign On (SSO) server.
+
 Two parts:
 
 ==== Backend:
 
-2 APIs in Insurance domain:
+2 backend APIs in Insurance domain:
 - One API for Insurance Quote calculation (REST API using Decision Manager)
 - One API for Driver  Verification (mock service)
 
-1 API on Fuse Ignite:
+1 composite API on Fuse Ignite:
 . Expose a REST API getting a Quote Request, enrich the request with Driver Verification details, and generate an Insurance Quote response.
 
 API Managed through 3scale:
